@@ -51,8 +51,14 @@ public class linkedlinsafter {
             }
             else{
                 Node n = new Node(value);
-                n.next = temp.next;
-                temp.next = n;
+                if(temp.next==null){
+                    tail.next = n;
+                    tail = n;
+                }
+                else{
+                    n.next = temp.next;
+                    temp.next = n;
+                }
             }
         }
     }
